@@ -7,6 +7,7 @@ import com.orhanobut.logger.LogLevel;
 import com.orhanobut.logger.Logger;
 import com.zwl.netdemo.retrofit.ApiService;
 import com.zwl.netdemo.retrofit.RetrofitClient;
+import com.zwl.netdemo.retrofit.Test;
 import com.zwl.netdemo.retrofit.bean.Movie;
 import com.zwl.netdemo.retrofit.bean.Subjects;
 
@@ -142,6 +143,8 @@ public class MainActivity extends AppCompatActivity {
         retrofitDownloadTest();
         retrofitUploadFileTest();
         retrofitUploadFilesTest();
+        Test test = new Test();
+        test.start(this);
     }
 
     private void test1() {
@@ -213,7 +216,7 @@ public class MainActivity extends AppCompatActivity {
         String descriptionString = "hello, 这是文件描述";
         RequestBody description = RequestBody.create(MediaType.parse("multipart/form-data"), descriptionString);
 
-        mApiService.uploadFile("", description, body)
+        mApiService.uploadFile("http://p1.so.qhimgs1.com/bdr/", description, body)
                 .subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<ResponseBody>() {
                     @Override
@@ -245,7 +248,7 @@ public class MainActivity extends AppCompatActivity {
         form.addFormDataPart("keyName", "Zone");
         form.addFormDataPart("file", "gaga.jpg", RequestBody.create(MediaType.parse("image/*"), file));
         form.addFormDataPart("file2", "meinv.jpg", RequestBody.create(MediaType.parse("image/*"), file));
-        mApiService.uploadFiles("", form.build())
+        mApiService.uploadFiles("http://p1.so.qhimgs1.com/bdr/", form.build())
                 .subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<ResponseBody>() {
                     @Override

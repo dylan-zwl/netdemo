@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/netdemo.iml" filepath="$PROJECT_DIR$/netdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/retrofitmodule/retrofitmodule.iml" filepath="$PROJECT_DIR$/retrofitmodule/retrofitmodule.iml" />
     </modules>
   </component>
 </project>

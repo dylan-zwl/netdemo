@@ -44,6 +44,12 @@ public interface ApiService {
             @Header("key") String key,
             @FieldMap Map<String, String> maps);
 
+    @POST("{url}")
+    Observable<ResponseBody> executePost(
+            @Path("url") String url,
+            @Header("key") String key,
+            @Body Movie movie);
+
     /**
      * 功能描述 : 上传单个文件
      *
@@ -61,7 +67,7 @@ public interface ApiService {
      *
      * @param :
      */
-    @Multipart
+//    @Multipart
     @POST()
     Observable<ResponseBody> uploadFiles(
             @Url String url,
